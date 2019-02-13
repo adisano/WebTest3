@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WebTest3.Models;
+using System.Security.Claims;
 
 namespace WebTest3.Pages.Pets
 {
@@ -34,6 +35,8 @@ namespace WebTest3.Pages.Pets
             }
 
             _context.Pet.Add(Pet);
+
+
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
